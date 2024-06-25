@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use Illuminate\Database\Eloquent\Casts\Attribute;
+
 
 /**
  *
@@ -34,4 +36,35 @@ class Article extends Model
     use HasFactory;
 
     protected $fillable = ['id', 'title', 'body', 'author', 'published_at', 'created_at', 'updated_at'];
+    protected $casts = [
+        'published_at' => 'datetime:Y-m-d H:00',
+    ];
+
+
+
+
+    protected function title(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => ucfirst($value),
+            set: fn (string $value) => trim($value),
+        );
+    }
+
+
+    protected function body(): Attribute
+    {
+        return Attribute::make(
+            get: fn (string $value) => ucfirst($value),
+            set: fn (string $value) => trim($value),
+        );
+    }
+
+    protected function published_at(): Attribute
+    {
+        return Attribute::make(
+            set: fn (string $value) => \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $value),
+        );
+    }
+
 }
