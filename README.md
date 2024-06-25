@@ -1,3 +1,34 @@
+Laravel
+Задача: Разработать RESTful API для управления статьями (articles).
+
+Требования:
+Структура базы данных:
+Создать миграцию для таблицы articles с полями id, title, body, author, published_at, created_at, updated_at.
+Модели и связи:
+Создать модель Article и настроить её для работы с таблицей articles.
+Контроллеры и маршруты:
+Создать контроллер ArticleController с методами для CRUD операций:
+index (GET /api/articles) - получение списка статей.
+show (GET /api/articles/{id}) - получение статьи по ID.
+store (POST /api/articles) - создание новой статьи.
+update (PUT /api/articles/{id}) - обновление статьи.
+destroy (DELETE /api/articles/{id}) - удаление статьи.
+Валидация и авторизация:
+Реализовать валидацию входных данных для методов store и update.
+Настроить политику для авторизации пользователей при создании, обновлении и удалении статей.
+Docker:
+Создать Dockerfile и docker-compose.yml для развертывания приложения с использованием контейнеров для веб-сервера (Nginx), PHP версии 8.3  и базы данных (MySQL) - версия выше 5.7.
+Git:
+Использовать Git для контроля версий.
+Создать репозиторий на GitHub или другом сервисе.
+Совершить не менее 5 коммитов с сообщениями, которые отражают этапы выполнения задания.
+Результат:
+Публичный репозиторий на GitHub с README файлом, описывающим шаги для запуска приложения с использованием Docker.
+Ссылка на репозиторий для проверки задания
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
