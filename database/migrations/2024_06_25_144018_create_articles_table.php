@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('body');
             $table->unsignedBigInteger('author');
-            $table->timestamp('published_at');
+            $table->timestamp('published_at')->useCurrent();
             $table->timestamps();
         });
     }
